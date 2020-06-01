@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content='Gaël Comeau'>
+        <meta description='description' content='jeu , 21 , BlackJack, tp javascript'>
+
+        <title>Black Jack - TP1 (javascript)</title>
+
+        <!-- Ajustement de la taille du viewport -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- Police de caractères -->
+        <link href="https://fonts.googleapis.com/css?family=Oswald:600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Oswald:600|Raleway:300&display=swap" rel="stylesheet">
+        <!-- Feuilles de style -->
+        <link rel="stylesheet" href="stylesheets/normalize.css">
+        <link rel="stylesheet" href="stylesheets/style.css">
+
+        <!-- integration du script -->
+        <script type="module" src="./js/main.js"></script>
+
+    </head>
+
+    <body>
+        <header>
+            <div class="titre" data-set-titre>le 21</div>
+            <div class="message" data-set-message></div>
+            <button class="disparait btn" data-set-btnRejouer>
+                <div class="cube">
+                    <div class="dessus">Rejouer</div>
+                    <div class="face">Rejouer</div>
+                </div>
+            </button>
+        </header>
+
+        <main>
+            <section>
+                <button class="btn" data-set-btnCommencer>
+                    <div class="cube">
+                        <div class="dessus">Commencer</div>
+                        <div class="face">Commencer</div>
+                    </div>
+                </button>
+                <div class="disparait" data-set-chpCombienJoueur>
+                    <!-- <div class="nb-joueur"> -->
+                        <span>Combien de Joueur ?</span>
+                        <select name="nb-joueur" id="nb-joueur-select" data-set-nbJoueur>
+                            <option value="1" selected>1 joueur</option>
+                            <option value="2">2 joueurs</option>
+                            <option value="3">3 joueurs</option>
+                            <option value="4">4 joueurs</option>
+                        </select>
+                    <!-- </div> -->
+                    <button class="btn" data-set-btnJouer>
+                        <div class="cube">
+                            <div class="dessus">Jouer</div>
+                            <div class="face">Jouer</div>
+                        </div>
+                    </button>
+                </div>
+                <div class="disparait zone-joueurs" data-set-zoneJoueurs>
+                    
+                </div>
+
+                <div class="fenetre disparait" data-set-fenetre>
+                    <h3>Info de Jeu</h3>
+                    <p></p>
+                    <button class="btn_joueur" data-set-close>Fermer</button>
+                </div>
+                
+            </section>
+        </main>
+        
+        <footer>
+            <p>Gael C. - groupe 17607</p>
+        </footer>
+    </body>
+
+</html>

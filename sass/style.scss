@@ -1,0 +1,229 @@
+@import "_mixin_variables.scss";
+// @import "_animation.scss";
+// @import "_header.scss";;
+
+
+/* Classe */
+
+
+.titre{
+    font-family: $f_titre;
+    font-size:6em;
+    color:$c_theme;
+    z-index: 10;
+    cursor:pointer ;
+    &:hover{
+        color:$c_clair;
+    }
+}
+
+.message{
+    z-index: 10;
+    padding:1em;
+    font-size: 1.2em;
+    text-align:center;
+}
+
+.couleur{
+    display:block;
+    margin: 1rem;
+    font-size: 2em;
+}
+
+.coeur:before{
+    content:"\1F63A";
+    margin: .5rem;
+    font-size: 1.3em;
+}
+
+.carreau:before{
+    content:"\1f649";
+    //display:block;
+    margin: .5rem;
+    font-size: 1.3em;
+}
+
+.pique:before{
+    content:"\1F355";    
+    margin: .5rem;
+    font-size: 1.3em;
+}
+
+.trefle:before{
+    content:"\1F383";
+    margin:.5rem;
+    font-size: 1.3em;
+}
+
+
+.btn{
+    perspective: 800px;
+    perspective-origin: center;
+
+    margin:0;
+    padding:0;
+    border:none;
+    border-radius:5px;
+    background: $c_sombre;
+    transform: translateY(-50%);
+    transform-origin: center;
+
+    .cube{
+        transform-style: preserve-3d;
+        transition: all .2s ease-out;
+        z-index: -10;
+        div{
+            padding:2rem;
+            @include couleur($c_sombre,$c_clair);
+            border-radius: 5px;
+            letter-spacing: .1em;
+            font-size: 1em;
+
+            &.dessus{
+                transform-origin: top;
+                transform: rotateX(90deg) translateZ(-5.1em);
+                @include couleur($c_clair,$c_theme);
+
+
+            }
+
+            &.face{
+                transform-origin: bottom;
+                transform: translateZ(5em);
+                box-shadow: 0 10px 80px $c_sombre_moyen;                
+            }
+        }
+
+        &:hover {
+
+            transform: rotateX(-90deg) translateY(-5em);
+        }
+    }
+
+    &:active{
+        outline:none;
+    }
+} // fin btn
+
+.zone-joueurs{
+    @include flexbox(flex,row,space-around,center);
+    flex-wrap:wrap;
+    
+    div {
+        margin:0.2em;
+        @include flexbox(flex,column,space-around,center);
+        
+        div{
+            @include flexbox(flex,row,space-around,center);
+            flex-wrap:wrap;
+        }
+    }
+}
+
+.nom_joueur{
+    font-family: $f_titre;
+    border:none;
+    @include couleur($c_sombre,$c_theme);
+    text-align: center;
+    font-size: 1.8em;
+}
+
+.btn_joueur{
+    @include couleur($c_sombre,$c_theme);
+    width: 10rem;
+    border: 1px solid $c_theme;
+    margin: .25rem;
+    padding: .5rem;
+    border-radius: 5px;
+    
+    &:enabled{
+        color:$c_clair;
+        border: 1px solid $c_clair;
+    }
+
+    &:enabled:hover{
+        @include couleur($c_clair,$c_sombre);
+    }
+
+    // &:hover{
+    //     box-shadow: 0 0 30px 5px $c_sombre_moyen;
+    //     z-index: -1;
+    // }
+
+}
+
+.carte{
+    padding:1em;
+    margin:1em 2px;
+    width:40px;
+    height:60px;
+    font-family: $f_titre;
+    border-radius: 5px;
+    // position:relative;
+    @include couleur($c_clair,$c_sombre);
+    @include flexbox(flex,column,space-around,center)
+
+}
+
+.valeur-carte{
+    //position: absolute;
+    font-size: 1.2em;
+
+
+}
+
+.fenetre{
+    position:absolute;
+    z-index: 30;
+    width:80vw;
+    height: 80vh;
+    top:10%;
+    left:10%;
+    @include couleur($c_sombre_transparent,$c_sombre_moyen);
+    @include flexbox(flex,column,space-around,center);
+    font-family: $f_titre;
+    font-size: 2em;
+}
+
+.disparait{
+    display:none;
+}
+
+
+
+/* général */
+
+body{
+    font-family: $f_texte, sans-serif;
+    background: $c_sombre;
+    color: $c_clair;
+    width:100vw;
+    height:100vh;
+    @include flexbox(flex,column,space-between,center);
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+header{
+    max-height: 50%;
+    @include flexbox(flex,column,space-around,center);
+}
+
+main{
+    height: 40%;
+    font-size: 1em;
+    @include flexbox(flex,column,center,center);
+    
+    section{
+        &>div{
+            label{
+                //margin: 2em;
+                z-index: 5;
+            }
+            .btn{
+                margin:3em;
+            }
+
+        }
+    }
+}

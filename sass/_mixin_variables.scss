@@ -1,0 +1,38 @@
+/* variables et mixin */
+
+/* variables couleurs */
+$c_sombre :  rgba(0, 8, 7, 1);
+$c_sombre_transparent :  rgba(0, 8, 7, .90);
+$c_sombre_moyen:rgba(107, 113, 126, 1);
+$c_clair : rgba(234, 242, 239, 1);
+$c_theme: rgba(101, 126, 212, 1);
+$c_theme_clair : rgba(255, 184, 111, 1);
+
+/* variables fontes */
+
+$f_titre : 'Oswald', sans-serif;
+$f_texte : 'Raleway', sans-serif;
+
+/* variables taille écran (basées sur les grilles bootstrap) */
+$ecran_moyen : 768px;
+$ecran_grand : 992px;
+
+/* variables icone */
+$icone_chat: '\1F640';
+$icone_cercle:'\25cf';
+
+
+
+/* mixin */
+
+@mixin flexbox($display, $direction, $justify, $align) {
+    display: $display;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin couleur($couleurBackground, $couleurTexte) {
+    background-color: $couleurBackground;
+    color: $couleurTexte;
+}
